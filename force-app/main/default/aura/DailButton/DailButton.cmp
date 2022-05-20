@@ -1,0 +1,11 @@
+<aura:component >
+       
+   <aura:attribute 
+    name="phoneNumber" 
+    type="String" 
+    access="GLOBAL"
+    required="true"/>
+    <a href="{! 'tel:' + v.phoneNumber }">
+        <img src="{# $Resource.DialPhoneAnimation}" class="roundbutton" />
+    </a>
+</aura:component>

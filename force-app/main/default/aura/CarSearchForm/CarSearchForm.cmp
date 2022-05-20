@@ -1,0 +1,40 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+   <div class="ex">
+    <div class="slds-box slds-box_x-small slds-text-align_center slds-m-around_x-small">
+        <div class="slds-box">
+            <div style="position: relative; width: 250px;">
+       <strong>  Car Search Form       </strong> 
+        </div>
+    <lightning:layout horizontalAlign="center">
+       
+        <lightning:layoutItem padding="around-small">  
+            <lightning:select aura:id="carType" name="selectItem" label="All Types" variant="label-hidden" value = " " >
+                <option value="">All Types</option>
+                <option value="Sports Car">Sports Car</option>
+                <option value="Luxury Car">Luxury Car</option>
+                <option value="Van">Van</option>
+                <option value="Zeep">Zeep</option>
+                <option value="Hundai">Hundai</option>
+                
+            </lightning:select>     
+        </lightning:layoutItem>
+       
+        <div class="slds-p-top_medium">
+        <lightning:layoutItem  padding="around-small">
+            <lightning:button variant="brand" label="Search" title="Search for cars" onclick="{! c.handleClick }" />
+            <lightning:button variant="brand-outline" label="New" title="New cars" onclick="{! c.handleClick }" />
+            
+        </lightning:layoutItem>
+         </div>
+         
+    </lightning:layout>
+            </div>
+        </div>
+    </div>
+        
+  <!-- <div>
+             <aura:iteration items="1,2,3,4,5" var="item">
+        <meter value="{!item / 5}"/><br/>
+    </aura:iteration>
+            </div> -->
+</aura:component>

@@ -1,0 +1,24 @@
+<template>
+    <lightning-card>
+        <lightning-record-form
+        object-api-name={objectApiName}
+        
+        fields={fields}
+        
+        onsuccess={handleSuccess}>
+        </lightning-record-form>
+        <div class="slds-m-horizontal_medium">
+            Add a screenshot,Recording or any other file that describes your case
+      <lightning-input type="file"   >
+    </lightning-input>
+   </div>
+   <lightning-file-upload>
+            label="Attach receipt"
+            name="fileUploader"
+            accept={acceptedFormats}
+            record-id={recordId}
+            onuploadfinished={handleUploadFinished}
+            multiple>
+    </lightning-file-upload>
+    </lightning-card>
+</template>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingGuestRules>
+        <fullName>Sharing_Rule_which_will_share_all_activates_to_portal_users</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Sharing Rule which will share all activates to portal users</label>
+        <sharedTo>
+            <guestUser>YammerTask</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>Name</field>
+            <operation>notEqual</operation>
+            <value></value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+</SharingRules>

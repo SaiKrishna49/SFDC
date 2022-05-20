@@ -1,0 +1,29 @@
+<template>
+    <!-- <<lightning-accordion allow-multiple-sections-open active-section-name="A" onsectiontoggle={handleSectionToggle} >
+        <lightning-accordion-section name="A" label="Accordion Title A">
+            <p>This is the content area for section A.</p>
+        </lightning-accordion-section>
+        <lightning-accordion-section name="B" label="Accordion Title B">
+            <p>This is the content area for section B.</p>
+        </lightning-accordion-section>
+        <lightning-accordion-section name="C" label="Accordion Title C">
+            <p>This is the content area for section C.</p>
+        </lightning-accordion-section>
+    </lightning-accordion> -->
+    <div class="lead-container" title="Lead form">
+        <lightning-record-view-form record-id={recordId} object-api-name="Lead">
+            <div class="slds-grid">
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="Website"></lightning-output-field>
+                    <lightning-output-field field-name="CustomStatus__c"></lightning-output-field>
+                </div>
+                <div class="slds-col slds-size_1-of-2">
+                    <lightning-output-field field-name="Industry"></lightning-output-field>
+                    <lightning-output-field field-name="AnnualRevenue"></lightning-output-field>
+                    <lightning-output-field field-name="Status"></lightning-output-field>
+                </div>
+            </div>
+        </lightning-record-view-form>
+    </div>
+</template>

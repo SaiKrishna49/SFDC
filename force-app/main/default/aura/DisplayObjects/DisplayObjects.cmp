@@ -1,0 +1,60 @@
+<!---**************************************************************************************************
+*** component Name         : DisplayObjectscomponent
+*** component Description  : This component is used to display all objects and fields of selected object fields. DisplayObjects.
+*** Author                 : Krishna
+*** component Created Date : 17-Nov-2021
+**********************************************************************************************-->
+<aura:component controller="DisplayObjectsClass" 
+                implements="force:hasRecordId,force:appHostable,flexipage:availableForAllPageTypes" 
+                access="global">
+    <aura:attribute name="selectedObjectList" type="List" />
+    <aura:attribute name="selectedfield" type="List" />
+    <aura:attribute name="querryAPIList" type="List" />
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+    <aura:attribute name="isButtonDisabled" type="Boolean" default="true" access="PRIVATE"/>
+  <aura:handler name="init" value="{!this}" action="{!c.doInit}" />  
+    
+    <div class="slds-form__row">
+    <div class="slds-form__item" role="listitem">
+       <div class="slds-text-color_destructive">All Objects and Its Related Fields with Data Table.</div>
+          <label class="slds-form-element__label" for="horizontal-form-element-id-50"><Strong>SelectObject : </Strong></label>
+       
+            <div class="slds-col slds-size_9-of-12">
+                  <lightning:combobox aura:id="SobjectList" name="SobjectList" 
+                                                                  label=""
+                                                                  placeholder="Select an Option" 
+                                                                  onchange="{!c.getfields}"
+                                                                  />
+         
+       
+        </div>
+        </div>
+    </div>
+    
+    
+   
+    <div class="slds-col slds-size_9-of-12"> <lightning:dualListbox aura:id="FieldsList" name="FieldsList" 
+                                                                    sourceLabel="Object Fields"
+                                                                    selectedLabel="Selected Fields"
+                                                                    diabled="true" /></div>
+     
+     
+    <div class="slds-col"> <lightning:button variant="brand" label="Display" title="SOQL Query" class="slds-m-left_x-small" onclick="{!c.Query}" /></div>
+    <lightning:card  >
+        <tbody> 
+            <tr>
+                <div style="height: 300px">
+                    <lightning:datatable
+                                         keyField="id"
+                                         data="{! v.data }"
+                                         columns="{! v.columns }"
+                                         hideCheckboxColumn="false"
+                                         maxRowSelection="{!v.maxRowSelection}"
+                                         showRowNumberColumn="true"/>
+                </div>
+            </tr>
+        </tbody>
+    </lightning:card>
+</aura:component>

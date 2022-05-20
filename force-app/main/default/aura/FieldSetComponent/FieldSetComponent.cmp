@@ -1,0 +1,80 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" 
+                controller="FieldSetComponentController">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    
+    <!-- define the attributes to be used in the component -->
+    <aura:attribute name="theObject" type="Aura.Component[]" />
+     <aura:attribute name="sObjectName" type="Opportunity" default="{'sobjectType' : 'Opportunity'}" /> 
+    <aura:attribute name="sObjectList" type="String[]" />
+    <aura:attribute name="fieldSetList" type="String[]" />
+    
+    <!-- the attribute where we will set all the component related to Field Set-->
+    <aura:attribute name="theForm" type="Aura.Component[]" />
+
+	<!-- put the spinner component -->
+    <!-- <c:Spinner /> -->
+	<!-- spinner component end -->
+    
+    <!-- page header -->
+    <div class="slds-page-header" style="background-color: darkturquoise;" >
+        <div class="slds-media">
+            <div class="slds-media__figure">
+                <span class="slds-icon_container" 
+                      title="Using Fieldset in Lightning Dynamic for All Object">
+                    <lightning:icon iconName="utility:automate" size="small" 
+                                    alternativeText="Indicates FieldSet"/>
+                </span>
+            </div>
+            <div class="slds-media__body">
+                <h1 class="slds-page-header__title slds-truncate slds-align-middle" 
+                    title="FieldSets in Lightning">FieldSets in Lightning</h1>
+                <p class="slds-text-body_small slds-line-height_reset" style="color:black">
+                     ***********************
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- page header end -->
+    
+    <div class="slds-m-around_small slds-grid slds-gutters">
+        <div class="slds-col" style="padding-left: 100px;">
+            <lightning:select name="selectObject" aura:id="selectObject" label="Select an Object" 
+                              onchange="{!c.doSelectChange}">
+                <aura:iteration items="{!v.sObjectList}" var="obj" >
+                	<option value="{!obj.value}">{!obj.label}</option>
+                </aura:iteration>
+            </lightning:select>
+        </div>
+        <div class="slds-col" style="padding-left: 100px;">
+            <aura:if isTrue="{!v.fieldSetList.length>0}" >
+                <lightning:select name="fieldSet" aura:id="fieldSet" label="Select a FieldSet" 
+                                  onchange="{!c.doFieldSetChange}">
+                    <aura:iteration items="{!v.fieldSetList}" var="fs" >
+                        <option value="{!fs.value}">{!fs.label}</option>
+                    </aura:iteration>
+                </lightning:select>
+            </aura:if>
+        </div>
+        <div class="slds-col">
+            
+        </div>
+    </div>
+   
+     <div class="slds-grid slds-wrap" style="padding-left: 110px;">
+      <!--
+        <div class="slds-size_1-of-2">
+            <div class="slds-m-around_x-small">
+                <lightning:input type="text" label="Industry" class="slds-input" value="{!v.sObjectName.Industry}" />
+            </div>
+        </div> -->
+        <aura:iteration items="{!v.theForm}" var="facet" >
+            <div class="slds-size_1-of-2">
+                <div class="slds-m-around_x-small">
+                    {!facet}
+                </div>
+            </div>
+        </aura:iteration>
+    </div>
+</aura:component>

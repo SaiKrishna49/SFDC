@@ -1,0 +1,10 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,force:hasRecordId,flexipage:availableForAllPageTypes">
+     <aura:attribute name="firstName" type="String"/> 
+    <div class="row">
+        <h2 class="header">Report Filter</h2>
+   
+        <lightning:input type="string" value="{!v.firstName}" aura:id="inpt" label="Enter a filter filed name" />
+       
+    </div>
+     <lightning:button variant="brand" label="Filter" title="Brand action" onclick="{! c.myAction }" />
+</aura:component>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>email_alert_for_new_contact</fullName>
+        <description>email alert for new contact</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>email_before_45_minnnn</fullName>
+        <description>email before 45 minnnn</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>emaill_before_45minnnn</fullName>
+        <description>emaill before 45minnnn</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Contact_Created</template>
+    </alerts>
+    <rules>
+        <fullName>Send Email before 45min</fullName>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Minutes_Before_Meeting__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Send an Email Reminder to my Lead before all of my scheduled meetings</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>email_before_45_minnnn</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Minutes_Before_Meeting__c</offsetFromField>
+            <timeLength>1</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>contact created</fullName>
+        <actions>
+            <name>email_alert_for_new_contact</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.FirstName</field>
+            <operation>notContain</operation>
+        </criteriaItems>
+        <description>Create a work flow on contact when contact created and edited send an email alert.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

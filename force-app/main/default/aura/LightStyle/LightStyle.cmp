@@ -1,0 +1,67 @@
+<aura:component>
+    
+    <aura:attribute name="Username" type="String"/>
+    <aura:attribute name="Password" type="String"/>                
+    
+    
+    <div class="slds-form-element slds-align_absolute-center slds-m-top_x-large" style="margin-top:200px;">
+        <div class="slds-col slds-size_6-of-12" style="background-color:white;">
+            <form>
+                <div class="slds-align_absolute-center slds-m-top_small slds-text-heading_large">
+                    <span>LOGIN HERE</span>
+                </div>
+                
+                <div class="slds-form-element__control">
+                    <lightning:input label="Username" name="username" value="{!v.Username}" required="true" />
+                </div>
+                
+                <div class="slds-form-element__control">
+                    <lightning:input label="Password:" type="password" name="password"  value="{!v.Password}" required="true" />
+                </div>
+                
+                <div class="slds-align_absolute-center" style="height:4rem">
+                    <lightning:button variant="Brand" label="Login" onclick="{!c.userLogin}"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</aura:component>
+
+
+
+
+
+
+
+
+
+
+
+<!--<aura:component >
+   <aura:attribute name="options" type="List" default="[
+    {'label': 'Remember Me', 'value': 'option1'}
+    ]"/>
+    <lightning:card class="abc">
+        <lightning:layout >
+            <lightning:card  class="a">
+           
+            <lightning:layoutItem padding="around-large" size="12" >
+                <lightning:input type="text" label="Username" name="Uname" />
+                <lightning:input type="text" label="Password" name="pword" />
+                <br/>
+                <lightning:button variant="brand" label="Login" title="Brand action" onclick="{! c.handleClick }" />
+    			
+                <lightning:radioGroup name="radioGroup"
+                          label="  "
+                          options="{! v.options }"
+                          value="{! v.value }"
+                          type="radio"/>
+                
+                <p><lightning:formattedUrl value="/  Forgot Your Password?" tooltip="Include leading slash" target="_blank" /></p>
+              
+            </lightning:layoutItem>
+                 </lightning:card>
+        </lightning:layout>
+    </lightning:card>
+</aura:component>
+-->

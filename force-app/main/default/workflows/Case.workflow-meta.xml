@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>email_alert_for_new_case</fullName>
+        <description>email alert for new case</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.platformuserclone@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krishna.standarduserclone@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Case_Created</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Field_update</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Field_update_Multistep_approval</fullName>
+        <description>field update for multi step approval</description>
+        <field>Subject</field>
+        <formula>&apos;Multi Step Approval Process&apos;</formula>
+        <name>Field_update Multistep approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Step_2_for_multistep_Approval</fullName>
+        <description>Step 2 for multi step approval process</description>
+        <field>Subject</field>
+        <formula>&apos;Comming from step 2 in multi step approval processsss&apos;</formula>
+        <name>Step 2 for multistep Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Email alert</fullName>
+        <actions>
+            <name>email_alert_for_new_case</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Status</field>
+            <operation>equals</operation>
+            <value>New</value>
+        </criteriaItems>
+        <description>for task on 11-12-2020</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <rules>
+        <fullName>Field update</fullName>
+        <actions>
+            <name>Field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Origin</field>
+            <operation>equals</operation>
+            <value>Web</value>
+        </criteriaItems>
+        <description>This rule is created for task given on 11-12-2020</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Task</fullName>
+        <actions>
+            <name>Please_reslove_this_issue</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Electrical</value>
+        </criteriaItems>
+        <description>for task given on  11-12-2020</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Update Quote value</fullName>
+        <active>false</active>
+        <formula>AND(Opportunity__r.Number_of_Devices__c =1,
+      ISPICKVAL(Opportunity__r.StageName,&apos;Closed Won&apos;)  
+)</formula>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Please_reslove_this_issue</fullName>
+        <assignedTo>krishna.standarduserclone@gmail.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <description>Please solve the issue with in 5 days from the day of assignment</description>
+        <dueDateOffset>5</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Case.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Please reslove this issue</subject>
+    </tasks>
+</Workflow>

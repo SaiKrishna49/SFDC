@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>designation__c</fullName>
+    <externalId>false</externalId>
+    <label>designation</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Experience_Level__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Jr Developer</fullName>
+                <default>false</default>
+                <label>Jr Developer</label>
+            </value>
+            <value>
+                <fullName>Developer</fullName>
+                <default>false</default>
+                <label>Developer</label>
+            </value>
+            <value>
+                <fullName>Sr Developer</fullName>
+                <default>false</default>
+                <label>Sr Developer</label>
+            </value>
+            <value>
+                <fullName>Asst Manager</fullName>
+                <default>false</default>
+                <label>Asst Manager</label>
+            </value>
+            <value>
+                <fullName>Manger</fullName>
+                <default>false</default>
+                <label>Manger</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>0-2</controllingFieldValue>
+            <valueName>Jr Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>0-2</controllingFieldValue>
+            <controllingFieldValue>2-4</controllingFieldValue>
+            <valueName>Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2-4</controllingFieldValue>
+            <controllingFieldValue>4-6</controllingFieldValue>
+            <controllingFieldValue>6-10</controllingFieldValue>
+            <valueName>Sr Developer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>4-6</controllingFieldValue>
+            <controllingFieldValue>6-10</controllingFieldValue>
+            <valueName>Asst Manager</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>6-10</controllingFieldValue>
+            <controllingFieldValue>10+</controllingFieldValue>
+            <valueName>Manger</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

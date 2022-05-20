@@ -1,0 +1,39 @@
+<template>
+<lightning-combobox
+        name="progress"
+        label="Choose Object"
+        value="None"
+        placeholder="None"
+        options={options}
+        onchange={handleChange}
+        required
+></lightning-combobox><br/>
+<template if:true={selectedObject}>
+<lightning-dual-listbox name="Fields"
+                        label="Select Fields"
+                        source-label="Available"
+                        selected-label="Selected"
+                        field-level-help="Select your preferred fields"
+                        options={options1}
+                        onchange={handleChange1}></lightning-dual-listbox><br/>
+<lightning-button variant="brand" label="Get Records" title="Primary action" onclick={handleClick3} class="slds-m-left_x-small">
+</lightning-button><br/>
+</template>
+<template if:true={data}>
+<div style="height: 300px;">
+<lightning-datatable
+        key-field="id"
+        data={data}
+        columns={columns}
+        >
+</lightning-datatable>
+</div><br/>
+<div style="color:blue;">
+        <template if:false={firstPage}>
+<lightning-button variant="brand" label="Previous" title="Primary action" onclick={previouseHandler} class="slds-m-left_x-small">
+</lightning-button>
+
+        </template>
+        </div>
+         </template>
+                 </template>

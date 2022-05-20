@@ -1,0 +1,20 @@
+<aura:component >
+    <aura:attribute name="principle" type="integer" />
+    <aura:attribute name="Time" type="integer" />
+    <aura:attribute name="rateOfIntrest" type="integer" />
+    <aura:attribute name="Intrest" type="integer" />
+    <aura:attribute name="TotalAmmount" type="integer" />
+    <lightning:card title= "Intrest calculator" iconName="utility:add" >
+    <aura:set attribute="actions">
+        <lightning:button label = "calulate SI" onclick="{!c.calulate}"/>
+    </aura:set>
+    <aura:set attribute="footer">
+        <lightning:button label="clear" onclick="{!c.clear}" />
+    </aura:set>
+        <lightning:input label="Enter principle amount" value="{!v.principle}" />
+        <lightning:input label="Enter Time in years" value="{!v.Time}" />
+        <lightning:input label="Enter Rate of Intrest" value="{!v.rateOfIntrest}"/>
+        <lightning:input label="Simple Intrest is: " value="{!v.result}" />
+        <lightning:input label="Total Ammount with Intrest is:" value="{!v.TotalAmmount}" />
+    </lightning:card>
+</aura:component>

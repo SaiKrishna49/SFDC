@@ -1,0 +1,69 @@
+<!---/**************************************************************************************************
+*** Component Name : ObjectRecords
+*** Class Description : This component displays the records of selected object with selected Fields.
+*** Author : krishna
+*** Class Created Date : 23-12-2021
+**************************************************************************************************/-->
+<aura:component controller="ObjectRecordsClass" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="ObjectList" Type="String[]"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:attribute name="objectSelected" type="String"/>
+    <aura:attribute name="fieldList" type="List" default="[]" />
+    <aura:attribute name="fieldName" type="List" default="[]" />
+    <aura:attribute name="selectedFieldList" type="List" default="[]" />
+    <aura:attribute name="columns" type="String[]"/>
+    <aura:attribute name="Data" type="Object[]"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="1"/>
+    <aura:attribute name="isButtonDisabled" type="Boolean" default="true" access="PRIVATE"/>
+    <aura:attribute name="control" default = "false"  type="boolean"/>
+    <aura:attribute name="filetype" type="List" default="['.png', '.jpg', '.jpeg','.csv']" />
+    <aura:attribute name="multiple" type="Boolean" default="true" />
+   <div> 
+<p class= "heading" >  Select Object Records  </p>
+       </div>
+    <br></br>
+    <div class="slds-col slds-size_5-of-12">
+        <div>
+            <p class="SelectAnObject">  Select An Object </p>
+        <lightning:select label="Select An Object" required="true" value="{!v.objectSelected}"
+                          onchange="{!c.selectObject1}">
+            <option value="">-- None --</option>
+            <aura:iteration items="{!v.ObjectList}" var="listOfObject">
+                <option value="{!listOfObject}" text="{!listOfObject}"></option>
+            </aura:iteration>
+        </lightning:select>
+        </div>
+    </div>
+    
+    <div class="slds-col slds-size_6-of-12">
+        <lightning:dualListbox aura:id="Select Fields"
+                               name="Fields"
+                               label="Select Fields"
+                               sourceLabel="Available Fields"
+                               selectedLabel="Selected Fields"
+                               options="{!v.fieldList }"
+                               value="{!v.selectedFieldList}"/>
+        <lightning:button variant="brand" label="Display" title="Brand action" onclick="{! c.handleGenreChange }" />
+    </div>
+  <!--  <aura:if isTrue="{!v.control}" > -->
+       <div style="height: 300px">
+        <lightning:datatable
+                             keyField="id"
+                             data="{! v.Data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="false"
+                             showRowNumberColumn="true"
+                             aura:id="selectedRows"/>
+    </div>
+    <br></br>
+    <lightning:button variant="brand" label="Download" title="Brand action" onclick="{! c.downloadCsv }" />
+    <br></br>
+    <lightning:fileUpload label="Attach receipt"
+                          name="fileUploader"
+                          multiple="true"
+                          accept="{!v.filetype}"
+                         
+                          onuploadfinished="{!c.handleUploadFinished}" />
+   <!-- </aura:if> -->
+    
+</aura:component>

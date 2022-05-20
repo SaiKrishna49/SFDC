@@ -1,0 +1,16 @@
+<aura:component controller="RecaptchaController" implements="forceCommunity:availableForAllPageTypes,lightning:availableForFlowScreens" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.onInit}" />
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}" />
+    <aura:attribute name="recaptchaResponse" type="String" />
+    <lightning:recordEditForm aura:id="recordEditForm" objectApiName="Lead" onsubmit="{!c.doSubmit}">
+        <lightning:messages />
+        <lightning:inputField fieldName="FirstName" />
+        <lightning:inputField fieldName="LastName" />
+        <lightning:inputField fieldName="Email" />
+        <lightning:inputField fieldName="Phone" />
+        <lightning:inputField fieldName="Company" />
+        <div id="recaptchaCheckbox"></div>
+        <br/>
+        <lightning:button aura:id="myButton" label="Create Lead" type="submit" disabled="true" />
+    </lightning:recordEditForm>
+</aura:component>

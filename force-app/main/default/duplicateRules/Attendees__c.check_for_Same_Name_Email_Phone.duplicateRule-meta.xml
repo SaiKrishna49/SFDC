@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Block</actionOnUpdate>
+    <alertText>User can not Create duplicate attendee with the Same Name, Email &amp; Phone</alertText>
+    <description>User can not Create duplicate attendee with the Same Name, Email &amp; Phone</description>
+    <duplicateRuleFilter xsi:nil="true"/>
+    <duplicateRuleMatchRules>
+        <matchRuleSObjectType>Attendees__c</matchRuleSObjectType>
+        <matchingRule>match_for_Same_Name_Email_Phone</matchingRule>
+        <objectMapping xsi:nil="true"/>
+    </duplicateRuleMatchRules>
+    <isActive>true</isActive>
+    <masterLabel>check for Same Name, Email &amp; Phone</masterLabel>
+    <securityOption>EnforceSharingRules</securityOption>
+    <sortOrder>1</sortOrder>
+</DuplicateRule>

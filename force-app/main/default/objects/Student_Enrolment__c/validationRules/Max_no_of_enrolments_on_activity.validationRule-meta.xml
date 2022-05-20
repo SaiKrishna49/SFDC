@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Max_no_of_enrolments_on_activity</fullName>
+    <active>false</active>
+    <errorConditionFormula>Activity__r.Number_of_Enrolments__c  &gt; Activity__r.Max_number_of_Enrolments_allowed__c</errorConditionFormula>
+    <errorMessage>The Total number of Student Enrolments on an activity should not exceed the “Max number of Enrolments allowed” on Activity.</errorMessage>
+</ValidationRule>

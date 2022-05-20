@@ -1,0 +1,69 @@
+<aura:component controller="AccRelatedConC"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="PageHeading" type="String" default="Accounts" />
+    <aura:attribute name="accData" type="List"/>
+    <aura:attribute name="conData" type="list"/>
+    <aura:attribute name="show" type="boolean" default="false"/>
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doinit}" />
+    
+    
+    <div class="slds-section slds-is-open">
+        <h3 class="slds-section__title slds-theme_shade">
+            <span class="slds-truncate slds-p-horizontal_small" title="Section Title"><b> Accounts </b></span>
+        </h3>
+        <br/>
+        <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+            <thead>
+                <tr class="slds-text-heading--label">
+                    <th scope="col"><div class="slds-truncate" title="Account Name">Account Name</div></th>
+                    <th scope="col"><div class="slds-truncate" title="Phone">Phone</div></th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <aura:iteration items="{!v.accData}" var="row" indexVar="index">
+                    <tr>
+                        <th scope="row">
+                            <div class="slds-truncate" >
+                                <a onclick="{!c.showCon}" value="{!row}" data-index="{!index}">{!row.Name} </a>
+                            </div>
+                        </th>
+                        <td><div class="slds-truncate" title="{!row.Phone}">{!row.Phone}</div></td>
+                        
+                    </tr>
+                </aura:iteration>
+            </tbody>
+        </table>
+    </div>
+    <br/>
+    <aura:if isTrue="{!v.show}">
+        <div class="slds-section slds-is-open">
+            <h3 class="slds-section__title slds-theme_shade">
+                <span class="slds-truncate slds-p-horizontal_small" title="Section Title"><b> Related Contact Details </b></span>
+            </h3>
+            <br/>
+            <table class="slds-table slds-table--bordered slds-table--striped slds-table--cell-buffer slds-table--fixed-layout">
+                <thead>
+                    <tr class="slds-text-heading--label">
+                        <th scope="col"><div class="slds-truncate" title="Contact Name">Contact Name</div></th>
+                        <th scope="col"><div class="slds-truncate" title="Phone">Phone</div></th>
+                        <th scope="col"><div class="slds-truncate" title="title">title</div></th>
+                        <th scope="col"><div class="slds-truncate" title="email">email</div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <aura:iteration items="{!v.conData}" var="row2">
+                        <tr>
+                            <th scope="row"><div class="slds-truncate" title="{!row2.Name}">{!row2.Name}</div></th>
+                            <td><div class="slds-truncate" title="{!row2.Phone}">{!row2.Phone}</div></td>
+                            <td><div class="slds-truncate" title="{!row2.title}">{!row2.title}</div></td>
+                            <td><div class="slds-truncate" title="{!row2.email}">{!row2.email}</div></td>
+                        </tr>
+                    </aura:iteration>
+                </tbody>
+            </table>
+        </div>
+    </aura:if>
+</aura:component>

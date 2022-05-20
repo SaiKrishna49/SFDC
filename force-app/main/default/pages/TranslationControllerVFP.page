@@ -1,0 +1,19 @@
+<apex:page standardcontroller="Contact" extensions="TranslationController" language="{!LanguageChoosen}" >
+<apex:form >
+
+        <apex:selectList value="{!LanguageChoosen}" size="1">
+            <apex:selectoptions value="{!Langlist}"/>
+            <apex:actionsupport event="onchange"/>
+    	</apex:selectlist>
+    
+        <apex:pageblock >
+            <apex:pageblocksection >
+                <apex:inputfield value="{!Contact.FirstName}"/>
+                <apex:inputfield value="{!Contact.LastName}"/>
+                <apex:inputfield value="{!Contact.Email}"/>
+                <apex:inputfield value="{!Contact.Phone}"/>
+            </apex:pageblocksection>
+        </apex:pageblock>
+    
+</apex:form>
+</apex:page>

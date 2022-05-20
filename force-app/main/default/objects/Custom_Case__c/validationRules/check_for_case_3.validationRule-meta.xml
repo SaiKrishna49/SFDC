@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>check_for_case_3</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( $Profile.Name =&quot;Platform user clone&quot;,
+And(
+ISPICKVAL( Status__c ,&quot;Closed&quot;),
+OR
+( LEN( Text_Field_1__c )=0,
+LEN( Text_Field_2__c )=0,
+LEN( Text_Field_3__c )=0,
+Check_box_1__c = FALSE,
+Check_box_2__c = FALSE,
+Check_box_3__c = FALSE,
+LEN( Opportunity_lookup__c ) =0)) ,
+false)</errorConditionFormula>
+    <errorMessage>all are required
+check box
+text field and
+opportunity look up</errorMessage>
+</ValidationRule>

@@ -1,0 +1,83 @@
+<aura:component controller="DataTableTestC" implements="lightning:availableForFlowScreens">    
+    <aura:attribute name="RecordId" type="String"/> 
+    <aura:attribute name="contact" type="contact" />
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+  
+
+       <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+    <lightning:recordViewForm recordId="{! v.RecordId }" objectApiName="contact">
+      
+        <div class="slds-box">
+           <div style="height: 50px">
+                <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Phone" />
+        
+    </div>
+           
+        </div>
+         <div style="height: 300px">
+        
+    </div>
+    </lightning:recordViewForm>    
+    <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.RecordId }"
+            keyField="id"
+            />
+       <lightning:flow aura:id="flowData"/>
+</aura:component>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!---
+
+<aura:component controller="DataTableTestC"
+                implements="force:appHostable,lightning:availableForFlowScreens,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+   
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="selectedRowsCount" type="Integer" default="0"/>
+    <aura:attribute name="maxRowSelection" type="Integer" default="5"/>
+    <aura:attribute name="isButtonDisabled" type="Boolean" default="true" access="PRIVATE"/>
+
+    
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    
+  <div style="height: 300px">
+        <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.data }"
+            keyField="id"
+            maxRowSelection="{! v.maxRowSelection }"
+            onrowselection="{! c.updateSelectedText }"/>
+    </div>
+</aura:component>
+
+-->

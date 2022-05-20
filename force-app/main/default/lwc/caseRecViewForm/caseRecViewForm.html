@@ -1,0 +1,109 @@
+<template>  
+  
+    <div class="slds-m-around_medium">     
+
+        <template if:true={newBool}>  
+              
+                <lightning-record-edit-form object-api-name="Case"  
+                                            onsuccess={handleCreate}  
+                                            record-type-id="0123i000000IC1dAAG">  
+                    <lightning-messages></lightning-messages>  
+                    <div class="slds-grid slds-wrap">  
+                        <div class="slds-col slds-size_1-of-2">                              
+                            <lightning-input-field field-name="Subject">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-input-field field-name="Status">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">                              
+                            <lightning-input-field field-name="Reason">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-input-field field-name="Origin">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-input-field field-name="ParentId" value={recId}>  
+                            </lightning-input-field>  
+                        </div>  
+                    </div>  
+                    <lightning-button class="slds-m-top_small"  
+                                        type="submit"  
+                                        label="Create new">  
+                                        </lightning-button>  
+                </lightning-record-edit-form>  
+  
+        </template>  
+
+        <template if:true={parentCaseId}>                      
+
+            <template if:true={viewBool}>  
+              
+                    <lightning-record-view-form record-id={parentCaseId}  
+                                                object-api-name="Case">  
+                        <div class="slds-grid slds-wrap">  
+                            <div class="slds-col slds-size_1-of-2">                              
+                                <lightning-output-field field-name="Subject">  
+                                </lightning-output-field>  
+                            </div>  
+                            <div class="slds-col slds-size_1-of-2">  
+                                <lightning-output-field field-name="Status">  
+                                </lightning-output-field>  
+                            </div>  
+                            <div class="slds-col slds-size_1-of-2">                              
+                                <lightning-output-field field-name="Reason">  
+                                </lightning-output-field>  
+                            </div>  
+                            <div class="slds-col slds-size_1-of-2">  
+                                <lightning-output-field field-name="Origin">  
+                                </lightning-output-field>  
+                            </div>  
+                        </div>  
+                    </lightning-record-view-form>  
+
+            </template>  
+              
+            <template if:true={editBool}>  
+
+                <lightning-record-edit-form record-id={parentCaseId}  
+                                            object-api-name="Case"  
+                                            onsuccess={handleSuccess}>  
+                    <lightning-messages>  
+                    </lightning-messages>  
+                    <div class="slds-grid slds-wrap">  
+                        <div class="slds-col slds-size_1-of-2">                              
+                            <lightning-input-field field-name="Subject">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-input-field field-name="Status">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">                              
+                            <lightning-input-field field-name="Reason">  
+                            </lightning-input-field>  
+                        </div>  
+                        <div class="slds-col slds-size_1-of-2">  
+                            <lightning-input-field field-name="Origin">  
+                            </lightning-input-field>  
+                        </div>  
+                    </div>  
+                    <lightning-button  
+                        class="slds-m-top_small"  
+                        variant="brand"  
+                        type="submit"  
+                        name="update"  
+                        label="Update">  
+                    </lightning-button>  
+                </lightning-record-edit-form>  
+
+            </template>  
+
+        </template >  
+
+    </div>  
+  
+</template>

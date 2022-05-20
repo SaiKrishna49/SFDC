@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Name_ValidationErrorMessage</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Name_ValidationErrorMessage</shortDescription>
+        <value>Please enter atleast 8 Characers.</value>
+    </labels>
+    <labels>
+        <fullName>Welcome_Message</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Welcome Message</shortDescription>
+        <value>Have a Great day Ahead  !</value>
+    </labels>
+    <labels>
+        <fullName>getWeekdata</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>getWeekdata</shortDescription>
+        <value>THIS_WEEK</value>
+    </labels>
+</CustomLabels>

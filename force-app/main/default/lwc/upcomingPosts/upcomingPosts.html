@@ -1,0 +1,27 @@
+<template>
+    <lightning-card title="Drag and Drop in Lightning Web Component">
+        <lightning-layout>
+            <div class="slds-p-around_small">
+                <div class="slds-text-heading_small">TO-DO POSTS</div><br/>
+                <div class="flex-container">
+                    <div id="ToDo2" class="box" draggable="true" ondragstart={drag}>
+                        Create Dynamic Apex Instance using Type.forName()
+                    </div>
+                    <div id="ToDo3" class="box" draggable="true" ondragstart={drag}>
+                        Drag and Drop in Lightning Web Component (LWC)
+                    </div>
+                    <div id="ToDo4" class="box" draggable="true" ondragstart={drag}>
+                        Drag and Drop between Multiple Lightning Web Components
+                    </div>
+                </div>
+                <hr></hr>
+                <div class="slds-text-heading_small">COMPLETED POSTS</div><br/>
+                <div class="flex-container"  draggable="true" ondragover={allowDrop} ondrop={drop}>
+                    <div id="ToDo1" class="box completed">
+                        Share JavaScript Code Between LWC and Aura Component
+                    </div>
+                </div>
+            </div>
+        </lightning-layout>
+    </lightning-card>
+</template>

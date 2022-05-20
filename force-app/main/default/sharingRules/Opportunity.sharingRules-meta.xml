@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>rule_for_opp</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>rule for opp</label>
+        <sharedTo>
+            <role>Role2underCFO</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>Role2underCFO</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>test_for_profile</fullName>
+    <active>false</active>
+    <errorConditionFormula>IF( $Profile.Name =&quot;Platform user clone&quot;,   
+    And(
+       LEN(   Opportunity_lookup__c ) =0) ,
+       false)</errorConditionFormula>
+    <errorMessage>Opportunity is required</errorMessage>
+</ValidationRule>

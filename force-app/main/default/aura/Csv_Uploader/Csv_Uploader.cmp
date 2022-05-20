@@ -1,0 +1,31 @@
+<aura:component controller="Controller">
+    <aura:attribute name="TableContent" type="String"  description=" Show the Result class"/>
+    <aura:attribute name="TargetFileName" type="String"  description="Name of the file"/>
+    <aura:attribute name="tableheaders" type="Object[]" />
+    <aura:attribute name="fileContentData" type="String"/>
+    <aura:attribute name="filename" type="String"/>
+    <!-- It will display 100 records . Change for your requirement-->
+    <aura:attribute name="NumOfRecords" type="Integer" default="100"/> 
+    <aura:attribute name="showMain" type="Boolean" default="true"/>
+
+ <aura:if isTrue="{!v.showMain}">
+        <div  class="slds-m-around--large" ondragover="{!c.onDragOver}" ondrop="{!c.onDrop}" >
+            
+            <div aura:id="holder" class="slds-m-top--medium slds-align--absolute-center" style="background-color:#bfbfb2; height:100px" >
+                <h1>Drag and Drop CSV file here</h1>
+            </div>
+        </div>
+        <aura:set attribute="else">
+            <ui:outputRichText class="uiOutputRichText slds-m-around--large" value="{!v.TargetFileName}"/> 
+            <ui:outputRichText class="uiOutputRichText slds-m--around-large" value="{!v.TableContent}"/>
+            <div class="slds-p-around--large slds-align--absolute-center">
+                <lightning:button label="Save" variant="brand" onclick="{!c.processFileContent}"
+                                  />
+                <lightning:button label="Cancel" variant="brand" 
+                                  onclick="{!c.cancel}" /> 
+            </div>
+            
+        </aura:set>
+     </aura:if>
+   
+</aura:component>

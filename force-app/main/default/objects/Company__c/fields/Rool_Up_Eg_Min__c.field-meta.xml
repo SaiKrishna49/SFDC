@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rool_Up_Eg_Min__c</fullName>
+    <externalId>false</externalId>
+    <label>Rool Up Eg Min</label>
+    <summarizedField>Employee__c.DOB__c</summarizedField>
+    <summaryForeignKey>Employee__c.Company__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

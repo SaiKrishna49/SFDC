@@ -1,0 +1,33 @@
+<aura:component >
+    <lightning:badge label="labelll"  iconName = "utility:company" iconPosition="end"  title= "Sai" />
+    <lightning:button label="Download" iconName="utility:download" iconPosition="right"  title="download 1" />
+    <lightning:button label="activity" iconName="utility:activity" iconPosition="left" title="activity 7" variant="destructive" />
+    <lightning:buttongroup>
+        <lightning:button label="save" iconName="utility:save" iconposition="left" title="save" variant="brand" />
+        <lightning:button label="delete" iconname="utility:record_delete" iconposition="right" title="delete" variant="destructive"/>
+        <lightning:button label="succes" iconname="utility:success" title="succes" variant="success" />
+        <lightning:buttonmenu alternativeText="Show menu" class="slds-button_last">
+        <lightning:menuitem label="menu Item one" value="item 1" />
+        <lightning:menuitem label="mwenu 3" value="item"/>
+    </lightning:buttonmenu>
+           <lightning:buttonIcon iconName="utility:settings" variant="bare" onclick="{! c.handleClick }" alternativeText="Settings" title="Settings" />
+    </lightning:buttongroup>
+
+    <lightning:progressIndicator currentStep="step2">
+        <lightning:progressStep label="Step One" value="step1"/>
+        <lightning:progressStep label="Step Two" value="step2"/>
+        <lightning:progressStep label="Step Three" value="step3"/>
+    </lightning:progressIndicator>
+
+    <aura:attribute name="breadcrumbCollection" type="Object"/>
+
+    <!-- Handlers -->
+    <aura:handler name="init" value="{! this }" action="{! c.init }"/>
+
+    <lightning:breadcrumbs>
+        <aura:iteration items="{! v.breadcrumbCollection }" var="breadcrumb">
+            <lightning:breadcrumb label="{! breadcrumb.label }" onclick="{! c.navigateTo }" name="{! breadcrumb.name }"/>
+        </aura:iteration>
+    </lightning:breadcrumbs>
+    
+</aura:component>

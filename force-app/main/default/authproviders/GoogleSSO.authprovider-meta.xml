@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AuthProvider xmlns="http://soap.sforce.com/2006/04/metadata">
+    <consumerKey>423389038051-bp45rrnsqcs4vfhgfm9ftgcfn9cu25sb.apps.googleusercontent.com</consumerKey>
+    <consumerSecret>/GutBtvNz3bix/ldZPGf+CrMcYmwQoVuMFCUMY+4J1wEAFOsxcHB9Q==</consumerSecret>
+    <executionUser>krishna.sfdc@salesforce.com</executionUser>
+    <friendlyName>GoogleSSO</friendlyName>
+    <iconUrl>https://login.salesforce.com/icons/google-black.png</iconUrl>
+    <includeOrgIdInIdentifier>false</includeOrgIdInIdentifier>
+    <providerType>Google</providerType>
+    <registrationHandler>AutocreatedRegHandler1640148796739</registrationHandler>
+    <sendAccessTokenInHeader>false</sendAccessTokenInHeader>
+    <sendClientCredentialsInHeader>false</sendClientCredentialsInHeader>
+    <sendSecretInApis>true</sendSecretInApis>
+</AuthProvider>

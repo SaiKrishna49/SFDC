@@ -1,0 +1,13 @@
+<aura:component >
+<lightning:card>
+    
+    <aura:set attribute="title">
+        	<h3>Supply Order</h3>
+        </aura:set>
+    <div>
+    <lightning:input label="Dealer">
+        
+        </lightning:input>
+    </div>
+    </lightning:card>
+</aura:component>

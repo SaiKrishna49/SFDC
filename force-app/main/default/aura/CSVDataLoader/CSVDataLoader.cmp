@@ -1,0 +1,44 @@
+<aura:component controller="CSVCreator" implements="force:appHostable,flexipage:availableForAllPageTypes">
+	<aura:attribute name="csvObject" type="CSVObject"/>
+	<aura:attribute name="csvString" type="String"/>
+
+	<aura:handler name="change" value="v.csvString" action="{!c.handleGetCSV}"/>
+	
+	<div class="slds-card">
+		<div class="slds-card__header slds-grid">
+			<header class="slds-media slds-media_center slds-has-flexi-truncate">
+				<div class="slds-media__body">
+					<h2 class="slds-card__header-title">
+						<span>CSV Dataloader</span>
+					</h2>
+				</div>
+                 <lightning:button variant="success" label="import Data" title="import Data" onclick="{! c.handleImportClick }" disabled="{!v.disabledTrue}"/>
+				<button class="slds-button slds-button_destructive" onclick="{!c.cleanData}">Clean Data</button>
+			</header>
+		</div>
+		<div class="slds-card__body slds-card__body_inner">
+			<input type="file" class="file" aura:id="file" onchange="{!c.handleUploadFinished}"/>
+			<aura:if isTrue="{!not(empty(v.csvObject))}">
+				<table class="slds-table">
+					<thead>
+						<tr>
+							<aura:iteration items="{!v.csvObject.headers}" var="header">
+								<th>{!header.column_name}</th>
+							</aura:iteration>
+						</tr>
+					</thead>
+					<tbody id="table_body">
+						<aura:iteration items="{!v.csvObject.lines}" var="line">
+							<tr>
+								<aura:iteration items="{!line}" var="cell">
+									<td>{!cell}</td>
+								</aura:iteration>
+							</tr>
+						</aura:iteration>
+					</tbody>
+				</table>
+			</aura:if>
+		</div>
+	</div>
+    
+</aura:component>

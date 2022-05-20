@@ -1,0 +1,24 @@
+<apex:page controller="selectAllSOQLExampleController" tabStyle="Account">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Fetch Accounts" action="{!fetch}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection columns="1" title="Dynamic SOQL Query" collapsible="false">
+                <apex:outputText value="{!query}">
+                </apex:outputText>
+            </apex:pageBlockSection>
+ 
+            <apex:pageBlockSection title="Account table" columns="1" collapsible="false">
+                <apex:pageBlockTable value="{!accList}" var="acc">
+                    <apex:column value="{!acc.name}"/>
+                    <apex:column value="{!acc.phone}"/>
+                    <apex:column value="{!acc.rating}"/>
+                    <apex:column value="{!acc.industry}"/>
+                    <apex:column value="{!acc.accountnumber}"/>
+                </apex:pageBlockTable>
+ 
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

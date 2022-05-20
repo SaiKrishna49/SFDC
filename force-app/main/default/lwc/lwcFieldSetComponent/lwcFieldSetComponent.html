@@ -1,0 +1,19 @@
+<template>    
+    <div class="c-container">
+        <div class="slds-card">
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <span>{lblobjectName} Records ({recordCount})</span>
+                </h2>
+            </div>
+            <div class="slds-card__body">
+                <lightning-datatable 
+                    key-field="Id"
+                    data={tableData}
+                    columns={columns}
+                    min-column-width=200>
+                </lightning-datatable> 
+            </div>                           
+        </div> 
+    </div>    
+</template>

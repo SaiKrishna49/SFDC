@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>tirumalasettisaikrishna@gmail.com</contactEmail>
+    <label>Zen Desk</label>
+    <oauthConfig>
+        <callbackUrl>https://solunusinchelp.zendesk.com/admin/home</callbackUrl>
+        <consumerKey>3MVG9fe4g9fhX0E69.qSRVup.qyUif.BQjk6hZAo8tDPUb9o3XzSJvOzRX_qJxzHU2TUmWKjGD8c2DOO5t.0w</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <isConsumerSecretOptional>false</isConsumerSecretOptional>
+        <isIntrospectAllTokens>false</isIntrospectAllTokens>
+        <isSecretRequiredForRefreshToken>true</isSecretRequiredForRefreshToken>
+        <scopes>Full</scopes>
+    </oauthConfig>
+    <oauthPolicy>
+        <ipRelaxation>ENFORCE</ipRelaxation>
+        <refreshTokenPolicy>zero</refreshTokenPolicy>
+    </oauthPolicy>
+</ConnectedApp>

@@ -1,0 +1,2 @@
+<apex:page standardcontroller="case" recordsetvar=" cases">
+</apex:page>

@@ -1,0 +1,155 @@
+<template>
+    <lightning-combobox
+        name="progress"
+        label="Choose Object"
+        value="None"
+        placeholder="None"
+        options={options}
+        onchange={handleChange}
+        required
+></lightning-combobox><br/>
+
+
+<br>
+    <lightning-combobox
+        name="progress"
+        label="Choose FieldSet"
+        value="None"
+        placeholder="None"
+        options={options1}
+        onchange={handleChange1}
+        required
+></lightning-combobox><br/>
+<lightning-datatable
+        key-field="id"
+        data={data}
+        columns={columns}
+        hide-checkbox-column
+        draft-values={draftValues}
+        onsave={handleSave}>
+        
+        >
+</lightning-datatable>
+
+</template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<template>
+    <lightning-dual-listbox name="languages"
+                            label="Select Languages"
+                            source-label="Available"
+                            selected-label="Selected"
+                            field-level-help="Select your preferred languages"
+                            options={options}
+                            onchange={handleChange}></lightning-dual-listbox>
+    <div class="slds-box" >
+        <p>Selected values are: {selected}</p>
+    </div>
+</template> 
+
+<template>
+
+    <lightning-combobox
+
+        name="progress"
+
+        label="Choose Object"
+
+        value="None"
+
+        placeholder="None"
+        defaultvalue
+        options={options}
+
+        onchange={handleChange}
+
+        required>
+        </lightning-combobox>
+          <div class="slds-box" >
+        <p>Selected values are: {_selected}</p>
+    </div>
+    <br>
+    <br>
+        <lightning-combobox
+
+        name="progress"
+
+        label="Choose Object"
+
+        value="None"
+
+        placeholder="None"
+
+        options={fldopt}
+
+        onchange={handleClick3}
+
+        required>
+        </lightning-combobox>
+        <div class="slds-box" >
+        <p>Selected values are: {fldopt}</p>
+    </div>
+        
+ <lightning-card class="slds-card_boundary" icon-name="custom:custom13">
+      <h1 slot="title">{title}</h1>
+      <lightning-button slot="actions" variant="brand" label="Add Row" onclick={addRow}></lightning-button>
+      <div class="slds-card__body slds-card__body_inner">
+          <table class="slds-table slds-table_bordered slds-table_cell-buffer slds-var-m-bottom_large"> 
+              <thead>
+                  <tr class="slds-text-title_caps">
+                      <template for:each={columns} for:item="column">
+                          <th key={column.apiName}><div class="slds-truncate">{column.label}</div></th>
+                      </template>
+                  </tr>
+              </thead>
+              <tbody>
+                  <template for:each={rows} for:item="row" for:index="index">
+                      <tr class="inputRows" key={row.uuid}>
+                          <template for:each={columns} for:item="column">
+                              <td key={column.apiName}>
+                                <c-input-pick-list-cell class="fields" field-type={column.fieldType} record={row} field={column.apiName} object-name={column.objectName}></c-input-pick-list-cell>
+                                <c-input-table-cell class="fields" field-type={column.fieldType} record={row} field={column.apiName} ></c-input-table-cell> 
+                              </td>
+                          </template>
+                          <td>
+                              <lightning-button-icon icon-name="utility:delete" value={index} variant="bare" onclick={removeRow}></lightning-button-icon>
+                          </td>
+                      </tr>
+                  </template>
+              </tbody>
+          </table>
+      </div>
+  </lightning-card> 
+    <lightning-button variant="brand" label="Submit" onclick={handleClick3}></lightning-button>
+
+    <template if:true={data}>
+<div style="height: 300px;">
+<lightning-datatable
+        key-field="id"
+        data={data}
+        columns={columns}
+        >
+</lightning-datatable>
+</div><br/>
+
+         </template>
+ </template> -->

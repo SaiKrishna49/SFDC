@@ -1,0 +1,21 @@
+<aura:component controller="AccountSearchClass">
+    <aura:attribute name="Accounts" type="Account[]" />
+    <aura:attribute name="SearchText" type="string" />
+    <aura:attribute name="columns" type="List" />
+    <aura:handler name="init" value="{!this}" action="{!c.createTableStructure}"  />
+    <lightning:card title="searchAccount" >
+    	<lightning:layout>
+        	<lightning:layoutItem size="3" >
+                <lightning:input label = "Enter the text : " value ="{!v.SearchText}" />
+            </lightning:layoutItem>
+            <lightning:layoutitem size="3">
+                <lightning:button label="find" onclick="{!c.searchme}"  />
+            </lightning:layoutitem>
+        </lightning:layout>
+    
+    </lightning:card>
+	<lightning:card title="search Reasult in Tabular format">
+        <lightning:datatable keyfield="id" data="{!v.Accounts}" columns = "{!v.columns}" />
+    
+    </lightning:card>
+</aura:component>

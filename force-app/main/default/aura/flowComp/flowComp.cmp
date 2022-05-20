@@ -1,0 +1,16 @@
+<aura:component implements="lightning:availableForFlowScreens">    
+    <aura:attribute name="RecordId" type="String"/>    
+    <!-- <aura:iteration items="{!v.acctList}" var="a">  -->
+    <lightning:recordViewForm recordId="{! v.RecordId }" objectApiName="contact">
+        <div class="slds-box">
+            <lightning:outputField fieldName="Name" />
+            <lightning:outputField fieldName="Phone" />
+            <lightning:outputField fieldName="Email" />
+        </div>
+       
+   </lightning:recordViewForm>   
+  <!--   </aura:iteration>  -->
+   
+   
+
+</aura:component>

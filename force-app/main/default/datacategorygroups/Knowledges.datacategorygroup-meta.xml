@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <dataCategory>
+            <dataCategory>
+                <dataCategory>
+                    <label>Covid-19</label>
+                    <name>Covid_19</name>
+                </dataCategory>
+                <dataCategory>
+                    <label>Property Manager Help Center</label>
+                    <name>Property_Manager_Help_Center</name>
+                </dataCategory>
+                <dataCategory>
+                    <dataCategory>
+                        <label>Registeration</label>
+                        <name>Registeration</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Auto Payments</label>
+                        <name>Auto_Payments</name>
+                    </dataCategory>
+                    <dataCategory>
+                        <label>Payment Issues</label>
+                        <name>Payment_Issues</name>
+                    </dataCategory>
+                    <label>Resident Support Help Center</label>
+                    <name>Resident_Support_Help_Center</name>
+                </dataCategory>
+                <label>FS Residential</label>
+                <name>FS_Residential</name>
+            </dataCategory>
+            <label>External Services</label>
+            <name>External_Services</name>
+        </dataCategory>
+        <dataCategory>
+            <label>knowledge</label>
+            <name>knowledge</name>
+        </dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <label>Knowledges</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

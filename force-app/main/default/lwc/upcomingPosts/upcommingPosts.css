@@ -1,0 +1,19 @@
+.box{
+    border-radius: 10px;
+    background-color: #faf59b;
+    padding: 15px;
+    width: 148px;
+    height: 148px;
+    display: inline-block;
+    margin: 3px;
+    font-size: 15px;
+    text-align: center; 
+}
+.completed{
+    background-color: #aafac3;
+}
+.flex-container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 463px;
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Update_Savings_Field_based_on_record_own</fullName>
+    <active>true</active>
+    <description>create a validation rule Ensures that a user can make changes to a custom field called savings only if the user is the record owner.</description>
+    <errorConditionFormula>AND(  
+      OR(
+        ISCHANGED( savings__c )
+        ),
+      $User.Id &lt;&gt;  Company__r.OwnerId 
+)</errorConditionFormula>
+    <errorDisplayField>savings__c</errorDisplayField>
+    <errorMessage>Can Edit only if the user is the record owner.</errorMessage>
+</ValidationRule>

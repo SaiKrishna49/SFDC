@@ -1,0 +1,32 @@
+<template>
+	<lightning-card title="Translate from English to Spanish">
+
+		<div class="slds-grid">
+
+			<div class="slds-col slds-p-horizontal_medium">
+				<div class="slds-p-around_medium lgc-bg">
+					<lightning-input type="text" label="Enter text to translate" placeholder="type here..."
+						onchange={populateText}>
+					</lightning-input>
+				</div>
+
+				<lightning-button style="margin-left: 15px;" label="Translate" title="Translate" onclick={translate}
+					class="slds-m-left_x-small">
+				</lightning-button>
+			</div>
+
+			<div class="slds-col slds-p-horizontal_medium">
+				<div class="slds-form-element">
+					<label class="slds-form-element__label" style="margin-top: 20px;" for="translatedText">
+						Translated Text
+					</label><br>
+					<div style="margin-top: 5px;">
+						{translatedText}
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</lightning-card>
+</template>

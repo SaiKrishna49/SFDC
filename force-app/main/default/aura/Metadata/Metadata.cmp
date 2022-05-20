@@ -1,0 +1,11 @@
+<aura:component controller="QueryBuilderLightning" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" 
+            access="global" >
+   <aura:attribute name="options" type="List" />
+   <aura:attribute name="selectedValue" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+<lightning:select name="Objects" label="Select object:" aura:id="onjId" value="{!v.selectedValue}">
+    <aura:iteration items="{!v.options}" var="objectname">
+        <option value="{!objectname}" text="{!objectname}" />  
+    </aura:iteration>
+</lightning:select>
+</aura:component>

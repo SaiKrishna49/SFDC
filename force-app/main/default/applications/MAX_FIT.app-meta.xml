@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <logo>MaxFit</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>MAX FIT is looking for an event management software which will help them to manage their events very effectively
+along with the attends &amp; location information.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>MAX FIT</label>
+    <navType>Standard</navType>
+    <tabs>Event__c</tabs>
+    <tabs>Event_Organizer__c</tabs>
+    <tabs>Attendees__c</tabs>
+    <tabs>Event_Attendee__c</tabs>
+    <tabs>Speaker__c</tabs>
+    <tabs>EventSpeakers__c</tabs>
+    <tabs>Location__c</tabs>
+    <tabs>Error_Log__c</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>username__c</tabs>
+    <tabs>Resource__c</tabs>
+    <tabs>oppLineItem1__c</tabs>
+    <tabs>Utilization__c</tabs>
+    <tabs>Resource_Allocation__c</tabs>
+    <tabs>Invoice__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>MAX_FIT_UtilityBar</utilityBar>
+</CustomApplication>

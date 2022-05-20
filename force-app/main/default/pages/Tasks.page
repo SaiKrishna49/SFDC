@@ -1,0 +1,8 @@
+<apex:page >
+    /*
+    -> add "Notes", "Attachments" related lists to the case object
+-> write a trigger to dummy update a case record whenever Notes or Attachments are added/updated/deleted
+->Whenever the notes are added/updated/deleted then same should be posted on the case chatter feed
+->Whenever the notes are added on opportunity then same should be posted on the related cases chatter feed
+    */
+</apex:page>

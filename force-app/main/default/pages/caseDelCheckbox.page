@@ -1,0 +1,44 @@
+<apex:page controller="CaseSelectClassController" sidebar="false">
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Show Deleted cases" action="{!processSelected}" rerender="table2"/>
+            </apex:pageBlockButtons>
+ 
+            <apex:pageblockSection title="All Cases" collapsible="false" columns="2">
+ 
+                <apex:pageBlockTable value="{!wrapCaseList}" var="cseWrap" id="table" title="All cases">
+                    <apex:column >
+                        <apex:facet name="header">
+                            <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')"/>
+                        </apex:facet>
+                        <apex:inputCheckbox value="{!cseWrap.selected}" id="inputId"/>
+                    </apex:column>
+                   <apex:column value="{!cseWrap.cse.CaseNumber}" /> 
+                    <apex:column value="{!cseWrap.cse.Origin}" />
+                    <apex:column value="{!cseWrap.cse.ClosedDate}" />
+                    <apex:column value="{!cseWrap.cse.status}" />
+                </apex:pageBlockTable>
+ 
+                <apex:pageBlockTable value="{!Deletelist}" var="c" id="table2" title="Delete cases">
+                 <apex:column value="{!c.CaseNumber}" headerValue="CaseNumber"/>  
+                    <apex:column value="{!c.Origin}" headerValue="Origin"/>
+                    <apex:column value="{!c.closedDate}" headerValue="ClosedDate"/>
+                    <apex:column value="{!c.status}" headerValue="Status" />
+                </apex:pageBlockTable>
+ 
+            </apex:pageblockSection>
+        </apex:pageBlock>
+    </apex:form>
+ 
+</apex:page>

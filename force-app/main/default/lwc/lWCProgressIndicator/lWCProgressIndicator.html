@@ -1,0 +1,15 @@
+<template>
+    <lightning-progress-indicator current-step={currentConfirm} type="path" variant="base" onclick={currentHandler}>
+        <template for:each={steps} for:item="step">
+            <lightning-progress-step label={step.label} value={step.value} key={step.label}></lightning-progress-step>
+        </template>
+        <template if:true={button}>
+        <lightning-button variant="brand" label="Mark as Completed" title="Download action" icon-name="utility:success" icon-position="left" 
+        class="slds-m-left_x-small" onclick={MarkingProgress}></lightning-button>
+        </template>
+        <template if:false={button}>
+        <lightning-button variant="brand" label="Mark as Completed" title="Download action" 
+        class="slds-m-left_x-small" onclick={MarkingProgress}></lightning-button>
+        </template>
+    </lightning-progress-indicator>
+</template>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Course__c</fullName>
+    <description>This picklist is created for the course object for the task given on 11-12-2020</description>
+    <externalId>false</externalId>
+    <label>Course</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>salesforce</fullName>
+                <default>false</default>
+                <label>salesforce</label>
+            </value>
+            <value>
+                <fullName>java</fullName>
+                <default>false</default>
+                <label>java</label>
+            </value>
+            <value>
+                <fullName>php</fullName>
+                <default>false</default>
+                <label>php</label>
+            </value>
+            <value>
+                <fullName>sharepoint</fullName>
+                <default>false</default>
+                <label>sharepoint</label>
+            </value>
+            <value>
+                <fullName>phyton</fullName>
+                <default>false</default>
+                <label>phyton</label>
+            </value>
+            <value>
+                <fullName>sql</fullName>
+                <default>false</default>
+                <label>sql</label>
+            </value>
+            <value>
+                <fullName>dot net</fullName>
+                <default>false</default>
+                <label>dot net</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

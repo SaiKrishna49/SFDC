@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>new_to_working</fullName>
+    <active>false</active>
+    <description>This validation rule will fire when status picklist is in &quot;working&quot;.
+This is created in custom_case object for Task dated on 10-12-2020</description>
+    <errorConditionFormula>if($RecordType.Name = &quot;Record_Type_1&quot;,
+AND( 
+ISPICKVAL( Status__c ,&quot;working&quot;)),
+OR
+( LEN( Text_Field_1__c )=0,
+    Check_box_1__c = FALSE) 
+)</errorConditionFormula>
+    <errorMessage>Please enter values for Text field 1 and check box 1</errorMessage>
+</ValidationRule>

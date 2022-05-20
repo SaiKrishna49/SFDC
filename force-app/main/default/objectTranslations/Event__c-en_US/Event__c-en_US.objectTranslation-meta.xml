@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Event</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Events</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_for_End_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_for_Event_Field_Type</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_for_Frequency_Field</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Check_for_Location_if_event_is_Virtual</name>
+    </validationRules>
+</CustomObjectTranslation>

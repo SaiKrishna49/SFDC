@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#9999FF</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#AAAAFF</color>
+        <height>5</height>
+    </bottomLine>
+    <footer>
+        <backgroundColor>#33FFFF</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#33CC00</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Middle</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#AAAAFF</color>
+        <height>5</height>
+    </middleLine>
+    <name>letter head for opp</name>
+    <topLine>
+        <color>#66FFFF</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

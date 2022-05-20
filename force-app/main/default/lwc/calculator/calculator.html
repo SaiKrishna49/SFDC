@@ -1,0 +1,178 @@
+<template>
+    <div class="slds-m-around_small" style="display: inline-block">
+        <lightning-card title="Full Calculator" icon-name="custom:custom34">
+            <div>
+                <lightning-input
+                value={calcExpression}
+                label="Calc Expression"
+                name="txtExpression"
+                readonly>
+                </lightning-input>
+            </div>
+            <div>
+                <lightning-input
+                value={showResult}
+                label="Result"
+                name="txtResult"
+                readonly>
+                </lightning-input>
+            </div>
+            <div style="display: inline-block">
+                <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+                        <tr class="slds-line-height_reset">
+                                <td>
+                                    <div class="slds-truncate">
+                                        <lightning-button
+                                            variant="brand-outline"
+                                            label="1"
+                                            onclick={handleClick}
+                                        ></lightning-button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">
+                                        <lightning-button
+                                            variant="brand-outline"
+                                            label="2"
+                                            onclick={handleClick}
+                                        ></lightning-button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">
+                                        <lightning-button
+                                            variant="brand-outline"
+                                            label="3"
+                                            onclick={handleClick}
+                                        ></lightning-button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="slds-truncate">
+                                        <lightning-button
+                                            variant="brand"
+                                            label="+"
+                                            onclick={handleClick}
+                                        ></lightning-button>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr class="slds-line-height_reset">
+                            <td>
+                                <div class="slds-truncate">
+                                    <lightning-button
+                                        variant="brand-outline"
+                                        label="4"
+                                        onclick={handleClick}
+                                    ></lightning-button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">
+                                    <lightning-button
+                                        variant="brand-outline"
+                                        label="5"
+                                        onclick={handleClick}
+                                    ></lightning-button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">
+                                    <lightning-button
+                                        variant="brand-outline"
+                                        label="6"
+                                        onclick={handleClick}
+                                    ></lightning-button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">
+                                    <lightning-button
+                                        variant="brand"
+                                        label="-"
+                                        onclick={handleClick}
+                                    ></lightning-button>
+                                </div>
+                            </td>
+                    </tr>
+                    <tr class="slds-line-height_reset">
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand-outline"
+                                    label="7"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand-outline"
+                                    label="8"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand-outline"
+                                    label="9"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand"
+                                    label="*"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="slds-line-height_reset">
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="destructive-text"
+                                    label="CLR"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand-outline"
+                                    label="0"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="success"
+                                    label="="
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slds-truncate">
+                                <lightning-button
+                                    variant="brand"
+                                    label="/"
+                                    onclick={handleClick}
+                                ></lightning-button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </lightning-card>
+    </div>
+</template>

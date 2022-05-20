@@ -1,0 +1,8 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute type="list" name="recordIds" />
+    <aura:handler name="init" value="{!this}" action="{!c.init}"/>
+    <h1>Search Results</h1>
+    <aura:iteration items="{!v.recordIds}" var="id">
+      <c:customSearchResultItem recordId="{!id}"/>
+    </aura:iteration>
+</aura:component>

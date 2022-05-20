@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Student Enrolment</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Student Enrolments</value>
+    </caseValues>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>Max_no_of_enrolments_on_activity</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage></errorMessage>
+        <name>two_days_of_Activity_Start_Date</name>
+    </validationRules>
+</CustomObjectTranslation>

@@ -1,0 +1,15 @@
+.THIS.container {
+    width : 611px;
+}
+.THIS .slds-form-element{
+    width : 470px;
+    height: 95px;
+}
+
+.THIS .uiInputSelect{
+        width: 468px;
+}
+
+.THIS .slds-textarea{
+    height:62px;
+}

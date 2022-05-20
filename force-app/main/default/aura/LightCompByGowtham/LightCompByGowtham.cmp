@@ -1,0 +1,30 @@
+<aura:component controller="LightningComponentData" implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="opt" type="List" />
+    <aura:attribute name="selectedFieldList" type="List" default="[]" />
+    <aura:attribute name="options" type="List" Default="[]"/>
+    <aura:attribute name="columns" type="String[]"/>
+    <aura:attribute name="Data" type="Object"/>
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <lightning:select name="distance" label="Select object:" aura:id="distance"
+                      onchange="{!c.callMe}">
+        <aura:iteration items="{!v.options}" var="objectname">
+            <option value="{!objectname}" text="{!objectname}" />
+        </aura:iteration>
+    </lightning:select>
+    <lightning:dualListbox name="Object Fields"
+                           label= "Select Fields "
+                           sourceLabel="object fields"
+                           selectedLabel="Selected fields"
+                           disable="true"
+                           options="{!v.options}"
+                           aura:id="fieldsList"
+                           value="{!v.selectedFieldList}"/>
+    <lightning:button variant="base" label="Display Records" title="Base action" onclick="{!c.handleClick }"/>
+    <div class="slds-modal__content slds-p-around_medium" >
+        <lightning:datatable keyField="id"
+                             data="{! v.Data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="false"
+                             showRowNumberColumn="true"/>
+    </div>
+</aura:component>

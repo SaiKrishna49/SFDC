@@ -1,0 +1,41 @@
+<template>
+    <lightning-card title="Case Submission Form" icon-name="custom:custom19">
+        <lightning-record-edit-form object-api-name="Case" 
+                                    onsuccess={handleUpload}>
+            <lightning-messages></lightning-messages>
+        <div class="slds-m-around_medium">
+                <lightning-input-field field-name='Subject' required></lightning-input-field>
+                <lightning-input-field field-name='Description'></lightning-input-field>
+                <lightning-input-field field-name='ContactId'></lightning-input-field>
+        <div class="slds-m-top_medium">
+          <template if:false={showButtons}>
+            <lightning-button class="slds-m-top_small" label="Cancel" onclick={handleReset}></lightning-button>
+              &nbsp;&nbsp;
+           <lightning-button variant="brand" type="submit" name="Create case" label="Upload File"></lightning-button>
+         <!----  &nbsp;&nbsp;
+           <lightning-button variant="brand" name="Finish" label="Finish" onclick={handleFinish}></lightning-button>
+         --> </template>
+        </div>
+        </div>
+        </lightning-record-edit-form>
+    <template if:true={recId}>
+      <div class="slds-p-around_medium lgc-bg">
+          <div class="demo-only" style="max-width:320px">
+            <div class="slds-form-element">
+              <span class="slds-form-element__label" id="file-selector-primary-label"></span>
+                 <div class="slds-form-element__control">
+                   <div class="slds-file-selector slds-file-selector_images">
+                    <div class="slds-file-selector__dropzone slds-has-drag-over">
+                      <lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={recId} onuploadfinished={handleUploadFinished} multiple>
+                      </lightning-file-upload>
+                    </div>
+                 </div>
+             </div>
+           </div>
+         </div>
+        <br />
+           <lightning-button variant="brand" name="Finish" label="Finish" onclick={handleFinish}></lightning-button>
+      </div>
+    </template>
+    </lightning-card>
+    </template>

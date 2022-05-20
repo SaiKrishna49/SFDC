@@ -1,0 +1,77 @@
+<template>
+  <lightning-card title="LWC component to submit a case" icon-name="custom:custom19">
+      <lightning-record-edit-form object-api-name="Case" 
+                                  onsuccess={handleUpload}>
+          <lightning-messages></lightning-messages>
+      <div class="slds-m-around_medium">
+        <label for="Subject">Write a concise case for subject</label>
+              <lightning-input-field field-name='Subject' required variant="label-hidden"></lightning-input-field>
+              <label for="Description">Provide a full description for your issue</label>
+             <!-- <lightning-input-field field-name='Description' variant="label-hidden" aria-placeholder="type a case description"></lightning-input-field>-->
+             <textarea id="Description" placeholder="type a case description...." class="slds-textarea"></textarea>
+             <!-- <lightning-input-field field-name='ContactId'></lightning-input-field>
+              <lightning-input-field field-name='ContactEmail'></lightning-input-field> -->
+             <h2> Case colaborators </h2>
+             <div class="slds-form-element">
+              <label class="slds-form-element__label" for="ContactEmail">Add Colaborators Email Address</label>
+              <div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_right">
+                <svg class="slds-icon slds-input__icon slds-input__icon_right slds-icon-text-default" aria-hidden="true">
+                  <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+                </svg>
+                <input type="text" id="ContactEmail" placeholder="enter email address" onchange={handleemailvalue} class="slds-input" />
+                <lightning-button label="Search" onclick={handleCheck}></lightning-button>
+              </div>
+            </div>
+      <div class="slds-m-top_medium">
+        <template if:false={showButtons}>
+          <lightning-button class="slds-m-top_small" label="Cancel" onclick={handleReset}></lightning-button>
+            &nbsp;&nbsp;
+         <lightning-button variant="brand" type="submit" name="Create case" label="Upload File"></lightning-button>
+       </template>
+      </div>
+      </div>
+      </lightning-record-edit-form>
+  <template if:true={recId}>
+    <div class="slds-p-around_medium lgc-bg">
+        <div class="demo-only" style="max-width:320px">
+          <div class="slds-form-element">
+            <span class="slds-form-element__label" id="file-selector-primary-label"></span>
+               <div class="slds-form-element__control">
+                 <div class="slds-file-selector slds-file-selector_images">
+                  <div class="slds-file-selector__dropzone slds-has-drag-over">
+                    <lightning-file-upload name="fileUploader" accept={acceptedFormats} record-id={recId} onuploadfinished={handleUploadFinished} multiple>
+                    </lightning-file-upload>
+                  </div>
+               </div>
+           </div>
+         </div>
+       </div>
+      <br />
+         <lightning-button variant="brand" name="Finish" label="Create Case" onclick={handleFinish}></lightning-button>
+    </div>
+  </template>
+  </lightning-card>
+  </template>
+
+
+
+
+
+
+<!--<template>  
+    <div class="slds-box slds-theme_default">  
+      <div class="slds-m-around_medium">  
+        <lightning-input type="text" label="Name" onchange={onNameChange}></lightning-input>  
+        <lightning-input type="tel" label="Phone" onchange={onPhoneChange}></lightning-input>  
+        <lightning-input type="email" label="Email" onchange={onEmailChange}></lightning-input>  
+        <lightning-textarea name="input3" label="Description" onchange={onDescriptionChange}  
+          placeholder="type here..."></lightning-textarea>  
+        <lightning-input type="file" onchange={onFileUpload} required name="uploadFile" label="Upload File">  
+        </lightning-input>  
+      </div>  
+      <div class="slds-align_absolute-center">    
+        <lightning-button label="Save" onclick={saveContact}>  
+        </lightning-button>  
+      </div>  
+    </div>  */
+  </template>  -->

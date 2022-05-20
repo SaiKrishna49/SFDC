@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Remainder_to_opp_Owner</fullName>
+        <description>Remainder to opp Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/email_alert_to_oppt_owner</template>
+    </alerts>
+    <alerts>
+        <fullName>Send_a_email_alert_to_oppt_owner</fullName>
+        <description>Send a email alert to oppt owner</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>krishna.standarduserclone@gmail.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/email_alert_to_oppt_owner</template>
+    </alerts>
+    <alerts>
+        <fullName>opportunity_created_and_edited</fullName>
+        <description>opportunity created and edited</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>krishna.sfdc@salesforce.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Opp_Created</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Test_for_workflow</fullName>
+        <description>Test for workflow</description>
+        <field>Major__c</field>
+        <literalValue>1</literalValue>
+        <name>Test for workflow</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Multiple filed update and send email</fullName>
+        <actions>
+            <name>Test_for_workflow</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Age__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>18</value>
+        </criteriaItems>
+        <description>Test for workflow</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Opportuity created</fullName>
+        <actions>
+            <name>opportunity_created_and_edited</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Name</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <description>Create a work flow on opportunity when opportunity created and edited send an email alert to specific user.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>amount is %3E20000</fullName>
+        <actions>
+            <name>Task_Created_When_Opp_Ammount_is_20000_by_WFR</name>
+            <type>Task</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Opportunity.Amount</field>
+            <operation>greaterThan</operation>
+            <value>20000</value>
+        </criteriaItems>
+        <description>Create a work flow on opportunity when amount is &gt;20000 ,create a task to any user withany due date.</description>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+    <tasks>
+        <fullName>Task_Created_When_Opp_Ammount_is_20000_by_WFR</fullName>
+        <assignedTo>krishna.sfdc@salesforce.com</assignedTo>
+        <assignedToType>user</assignedToType>
+        <dueDateOffset>5</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Opportunity.CreatedDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Task Created When Opp Ammount is &gt; 20000 by WFR</subject>
+    </tasks>
+</Workflow>
